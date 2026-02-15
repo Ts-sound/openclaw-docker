@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM node:22-bookworm
 
 LABEL description="Docker image for OpenClaw with essential tools pre-installed"
 
@@ -33,7 +33,7 @@ ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 RUN mkdir -p /root/.openclaw
 
 # 安装 OpenClaw
-RUN /bin/bash -c "cd /root/ && wget --no-check-certificate https://openclaw.ai/install.sh && bash install.sh"
+RUN /bin/bash -c "cd /root/ && curl -fsSL https://openclaw.ai/install.sh | bash"
 
 # 安装飞书插件
 RUN /bin/bash -c "openclaw plugins install @openclaw/feishu"
