@@ -10,6 +10,7 @@ Project is production-ready with secure SSH key-based authentication.
 - Fixed volume mapping: `.openclaw/openclaw.json` and `.openclaw/workspace` to `/root/.openclaw/` (2026-02-15)
 - Added OpenClaw installation via official install script (2026-02-15)
 - Added Feishu plugin installation (`@openclaw/feishu`) (2026-02-15)
+- Added GitHub Actions CI/CD for automated builds and releases (2026-02-15)
 
 ## Current Focus
 - Secure Docker image with SSH key-based authentication

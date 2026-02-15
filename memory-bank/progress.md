@@ -13,6 +13,7 @@
 - [x] OpenClaw config mapping to `/root/.openclaw/`
 - [x] OpenClaw installation via official script
 - [x] Feishu plugin installation (`@openclaw/feishu`)
+- [x] GitHub Actions CI/CD for automated builds and releases
 
 ## In Progress
 
@@ -23,7 +24,6 @@
 - [ ] Add docker-compose.yml for easier deployment
 - [ ] Add HEALTHCHECK instruction to Dockerfile
 - [ ] Add .dockerignore file
-- [ ] Add CI/CD pipeline for automated builds
 - [ ] Consider multi-stage build for optimization
 - [ ] Add non-root user option
 

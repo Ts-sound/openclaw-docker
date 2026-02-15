@@ -67,3 +67,31 @@ ssh root@localhost -p 2222 -i your_private_key
 - Password authentication is disabled for security
 - You must provide your SSH public key via volume mount
 - Root login is allowed with key authentication only
+
+## CI/CD
+
+This project uses GitHub Actions for automated builds and releases.
+
+### Release Process
+
+1. Create and push a version tag:
+
+   ```bash
+   git tag v1.0.0
+   git push origin v1.0.0
+   ```
+
+2. GitHub Actions will automatically:
+   - Build the Docker image
+   - Create a GitHub Release
+   - Upload the compressed image and SHA256 checksum
+
+### Download Pre-built Image
+
+Download the image from [Releases](https://github.com/Ts-sound/openclaw-docker/releases) page:
+
+```bash
+# Download and load the image
+wget https://github.com/Ts-sound/openclaw-docker/releases/download/v1.0.0/openclaw-docker-v1.0.0.tar.gz
+docker load < openclaw-docker-v1.0.0.tar.gz
+```
