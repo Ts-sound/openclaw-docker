@@ -32,6 +32,12 @@ ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 # 创建 openclaw 配置目录
 RUN mkdir -p /root/.openclaw
 
+# 安装 OpenClaw
+RUN /bin/bash -c "curl -fsSL https://openclaw.ai/install.sh | bash"
+
+# 安装飞书插件
+RUN /bin/bash -c "openclaw plugins install @openclaw/feishu"
+
 # 暴露 SSH 端口
 EXPOSE 22
 

@@ -20,6 +20,10 @@
 | tzdata | Timezone data |
 | locales | Language/locale support |
 
+### OpenClaw Installation
+- **OpenClaw**: Installed via `curl -fsSL https://openclaw.ai/install.sh | bash`
+- **Feishu Plugin**: `@openclaw/feishu` pre-installed
+
 ## Development Tools
 - **Git**: Version control
 - **Docker**: Container build and runtime

@@ -11,6 +11,8 @@
 - [x] Memory bank initialization
 - [x] SSH key-based authentication (password disabled)
 - [x] OpenClaw config mapping to `/root/.openclaw/`
+- [x] OpenClaw installation via official script
+- [x] Feishu plugin installation (`@openclaw/feishu`)
 
 ## In Progress
 
@@ -35,7 +37,8 @@
 
 ## Metrics
 
-- Dockerfile lines: 32
+- Dockerfile lines: 38
 - Memory bank files: 6
 - Installed packages: 9
+- OpenClaw: pre-installed with Feishu plugin
 - Runtime volumes: 3 (openclaw.json, workspace, authorized_keys)

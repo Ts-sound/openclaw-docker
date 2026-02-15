@@ -6,6 +6,8 @@ A lightweight and production-ready Docker image for OpenClaw runtime environment
 - Ubuntu 22.04 LTS base image
 - SSH server (key-based authentication only)
 - Essential tools: screen, vim, net-tools, sudo, curl, wget
+- OpenClaw pre-installed (via https://openclaw.ai/install.sh)
+- Feishu plugin pre-installed (`@openclaw/feishu`)
 - Timezone: Asia/Shanghai
 - Locale: en_US.UTF-8
 - OpenClaw config directory: `/root/.openclaw`

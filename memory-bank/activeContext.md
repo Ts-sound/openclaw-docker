@@ -8,6 +8,8 @@ Project is production-ready with secure SSH key-based authentication.
 - Memory bank initialized (2026-02-15)
 - SSH configuration updated: disabled password login, key-only authentication (2026-02-15)
 - Fixed volume mapping: `.openclaw/openclaw.json` and `.openclaw/workspace` to `/root/.openclaw/` (2026-02-15)
+- Added OpenClaw installation via official install script (2026-02-15)
+- Added Feishu plugin installation (`@openclaw/feishu`) (2026-02-15)
 
 ## Current Focus
 - Secure Docker image with SSH key-based authentication
