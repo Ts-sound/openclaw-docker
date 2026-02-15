@@ -8,8 +8,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # 更新软件源并安装所需工具
 RUN apt-get update && apt-get install -y --no-install-recommends \
     openssh-server screen vim net-tools \
-    sudo curl wget tzdata locales ca-certificates && \
-    update-ca-certificates --fresh &&\
+    sudo curl wget tzdata locales \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -34,7 +33,7 @@ ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 RUN mkdir -p /root/.openclaw
 
 # 安装 OpenClaw
-RUN /bin/bash -c "curl -fsSL https://openclaw.ai/install.sh | bash"
+RUN /bin/bash -c "cd /root/ && wget --no-check-certificate https://openclaw.ai/install.sh && bash install.sh"
 
 # 安装飞书插件
 RUN /bin/bash -c "openclaw plugins install @openclaw/feishu"
