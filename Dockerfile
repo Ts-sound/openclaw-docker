@@ -33,7 +33,7 @@ ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 RUN mkdir -p /root/.openclaw
 
 # 安装 OpenClaw
-RUN /bin/bash -c "cd /root/ && curl -fsSL https://openclaw.ai/install.sh | bash"
+RUN /bin/bash -c "cd /root/ && curl -fsSL https://openclaw.ai/install.sh | bash -s -- --no-onboard"
 
 # 安装飞书插件
 RUN /bin/bash -c "openclaw plugins install @openclaw/feishu"
