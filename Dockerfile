@@ -35,8 +35,8 @@ RUN mkdir -p /root/.openclaw
 # 安装 OpenClaw
 RUN /bin/bash -c "cd /root/ && curl -fsSL https://openclaw.ai/install.sh | bash -s -- --no-onboard"
 
-# 安装飞书插件
-RUN /bin/bash -c "openclaw plugins install @openclaw/feishu"
+# TODO: 安装飞书插件
+# RUN /bin/bash -c "openclaw plugins install @openclaw/feishu"
 
 # 暴露 SSH 端口
 EXPOSE 22
