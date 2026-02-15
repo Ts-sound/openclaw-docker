@@ -8,7 +8,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 # 更新软件源并安装所需工具
 RUN apt-get update && apt-get install -y --no-install-recommends \
     openssh-server screen vim net-tools \
-    sudo curl wget tzdata locales \
+    sudo curl wget tzdata locales ca-certificates && \
+    update-ca-certificates --fresh &&\
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
