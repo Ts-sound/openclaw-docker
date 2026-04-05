@@ -1,4 +1,7 @@
 # openclaw-docker
+
+[中文文档](README.zh_cn.md) | **English**
+
 A lightweight and production-ready Docker image for OpenClaw runtime environment, pre-installed with essential system tools (SSH, screen, vim, net-tools/ifconfig, etc.)
 
 ## Features
@@ -70,28 +73,38 @@ ssh root@localhost -p 2222 -i your_private_key
 
 ## CI/CD
 
-This project uses GitHub Actions for automated builds and releases.
+This project uses GitHub Actions for automated builds and pushes to GHCR (GitHub Container Registry).
 
-### Release Process
+### Workflow
 
-1. Create and push a version tag:
+The `ci-docker-publish.yml` workflow automatically:
+- Builds Docker images on new git tags
+- Pushes images to `ghcr.io`
 
-   ```bash
-   git tag v1.0.0
-   git push origin v1.0.0
-   ```
+### Trigger Conditions
 
-2. GitHub Actions will automatically:
-   - Build the Docker image
-   - Create a GitHub Release
-   - Upload the compressed image and SHA256 checksum
+| Event | Generated Tags |
+|-------|----------------|
+| Git tag (e.g., v1.2.3) | `ghcr.io/owner/openclaw-docker:v1.2.3` + `latest` |
 
-### Download Pre-built Image
+### Image Registry
 
-Download the image from [Releases](https://github.com/Ts-sound/openclaw-docker/releases) page:
+Images are pushed to:
+```
+ghcr.io/ts-sound/openclaw-docker:<tag>
+ghcr.io/ts-sound/openclaw-docker:latest
+```
+
+### Pull the Image
 
 ```bash
-# Download and load the image
-wget https://github.com/Ts-sound/openclaw-docker/releases/download/v1.0.0/openclaw-docker-v1.0.0.tar.gz
-docker load < openclaw-docker-v1.0.0.tar.gz
+# Pull latest version
+docker pull ghcr.io/ts-sound/openclaw-docker:latest
+
+# Pull specific version
+docker pull ghcr.io/ts-sound/openclaw-docker:v1.0.0
 ```
+
+## License
+
+MIT

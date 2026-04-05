@@ -1,0 +1,22 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    tags: ['v*.*.*']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Publish to GHCR
+        uses: Ts-sound/docker-publish-ghcr@v1
+        with:
+          image_name: openclaw-docker
